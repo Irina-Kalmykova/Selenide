@@ -1,5 +1,6 @@
 package ru.netology.Selenide;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -11,13 +12,13 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+
 public class CardDeliveryTest {
     public static String setLocalDate(int days) {
         return LocalDate.now().plusDays(days).format(DateTimeFormatter.ofPattern("dd.MM.yyyy",
                 new Locale("ru")));
     }
-
-
+    
     @Test
     void application() {
         String date = setLocalDate(3);
